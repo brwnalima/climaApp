@@ -1,10 +1,11 @@
 import React from 'react'
 import CurrentWeather from '../../currentWeather/CurrentWeather'
+import Header from '../../header/Header'
 
 function WeatherPage() {
     return (
         <div>
-            WeatherPage
+            <Header />
             <CurrentWeather />
         </div>
 

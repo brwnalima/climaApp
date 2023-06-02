@@ -1,0 +1,166 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searcharea {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-collapse {
+    width: 50%;
+}
+
+
+.navbar-list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-daily,
+.nav-degree {
+    display: flex;
+    gap: 1rem;
+}
+
+/* OPÇÃO DO DIA */
+
+.nav-daily .nav-itens a {
+    color: #c1c1c1;
+    text-decoration: none;
+}
+
+.nav-daily .nav-itens a:hover {
+    color: #242424;
+    border-bottom: 2px solid #242424;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: .2s ease-in-out;
+}
+
+
+/* BOTÕES  */
+
+.btn-degree {
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 6.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-itens:nth-child(1) .btn-degree {
+    background-color: #242424;
+}
+
+.nav-itens:nth-child(2) .btn-degree {
+    background-color: #c1c1c1;
+}
+
+/* IMAGEM */
+
+.nav-itens img {
+    width: 3.75rem;
+    min-height: 3.75rem;
+    max-width: 100px;
+}
+
+/* TOGGLER */
+
+.nav-toggler {
+    display: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        justify-content: space-around;
+        gap: 6rem;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        max-width: 100%;
+        height: 0;
+        visibility: hidden;
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        top: 80px;
+        right: 0;
+        opacity: 0.5;
+        transition: all 0.5s ease;
+    }
+
+    .navbar-collapse.show {
+        padding-top: 5rem;
+        display: block;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        visibility: visible;
+        opacity: 1;
+        transition: all 1s ease-in-out;
+        z-index: 10;
+        margin: 0 !important;
+    }
+
+    .navbar-list {
+        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        gap: 5rem;
+    }
+
+    .nav-daily,
+    .nav-degree {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .nav-toggler {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 30px;
+        color: #004794;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    /* BOTÕES  */
+
+    .btn-degree {
+        border-radius: 0;
+        color: #c1c1c1;
+    }
+    
+    .btn-degree:hover {
+        color: #242424;
+        scale: 1.4;
+        font-weight: bold;
+        cursor: pointer;
+
+        transition: .2s ease-in-out;
+    }
+    
+
+
+    .nav-itens:nth-child(1) .btn-degree, .nav-itens:nth-child(2) .btn-degree {
+        background-color: transparent;
+    }
+
+}
