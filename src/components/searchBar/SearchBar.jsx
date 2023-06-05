@@ -3,7 +3,7 @@ import { React, useEffect, useState } from 'react';
 import './SearchBar.css'
 
 import { LuWind } from 'react-icons/lu';
-import { BsFillDropletFill } from 'react-icons/bs';
+import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
 import { GiFluffyCloud } from 'react-icons/gi';
 import { BiEdit } from 'react-icons/bi';
 
@@ -19,7 +19,9 @@ function SearchBar() {
 
   const handleEdit = () => {
     setEditIsClicked(!editIsClicked)
+    setCity('')
   }
+
 
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
@@ -32,6 +34,7 @@ function SearchBar() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    setEditIsClicked(!editIsClicked)
     fetchWeatherData();
   };
 
@@ -87,8 +90,8 @@ function SearchBar() {
 
   return (
     // search
-    <div className={editIsClicked ? 'search-container show' : 'search-container hide'}>
-      <form onSubmit={handleFormSubmit} className='search-form'>
+    <div className="search-container">
+      <form onSubmit={handleFormSubmit} className={editIsClicked ? 'search-form show' : 'search-form hide'}>
         <input
           type="text"
           value={city}
@@ -107,15 +110,18 @@ function SearchBar() {
             <div className="location">
               <h3> {weatherData.name}, {weatherData.sys.country}</h3>
 
-              <button onClick={() => { handleEdit }}><BiEdit /></button>
+              <button onClick={handleEdit}><BiEdit /></button>
             </div>
             <p id='date'>{currentDate}</p>
             <p id='desc'>{translatedDescription}</p>
             <h1>{weatherData.main.temp.toFixed(0)}°C</h1>
 
+            <p id='status'>Sensação térmica de: {weatherData.main.feels_like}. </p>
+
             <div className="informations">
               <p><BsFillDropletFill /> {weatherData.main.humidity}%</p>
               <p><LuWind /> {weatherData.wind.speed}Km/H</p>
+              <p><BsClouds /> {weatherData.clouds.all}un.</p>
             </div>
           </div>
         ) : null}

@@ -7,18 +7,16 @@
     gap: 1rem;
 }
 
-/* .show {
-    display: block;
-}
-
-.hide {
-    display: none;
-} */
-
-.search-form {
+.show {
     display: flex;
     gap: 1.5rem;
 }
+
+.hide {
+    visibility: hidden;
+}
+
+/* ------ search bar  ------- */
 
 .search-form input {
     padding: .5rem;
@@ -30,15 +28,17 @@
 .search-form button {
     padding: 0.55rem 1rem;
     font-size: 1rem;
-    background-color: #0056b3;
-    color: #fff;
-    border: none;
-    border-radius: .25rem;
+    color: #242424;
+    border: 3px #242424 solid;
+    background-color: transparent;
+    border-radius: 6.25rem;
     cursor: pointer;
+    font-weight: bolder;
 }
 
 .search-form button:hover {
-    background-color: #004794;
+    background-color: #242424;
+    color: #dfdf1ae5;
     transition: .2s ease-in-out;
 }
 
@@ -53,30 +53,36 @@ button {
     cursor: pointer;
 }
 
-/* ---- animation ----- */
+
 
 @keyframes spin {
     0% {
-      transform: rotate(0);
+        transform: rotate(0);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 .loading {
     animation: spin 1s linear infinite;
 }
 
+/* ---- animation ----- */
+
 .search-description {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
 }
 
 .location {
     display: flex;
     gap: 0.1875rem;
     justify-content: center;
-    align-items: center!important;
+    align-items: center !important;
 }
 
 .location button {
@@ -119,4 +125,20 @@ button {
 .informations {
     display: flex;
     justify-content: space-between;
+    gap: 2.5rem;
+    margin: 1rem 0;
+}
+
+/* Responsividade para tablets */
+@media only screen and (min-width: 600px) {
+    .search-response {
+        padding: 2rem 4rem;
+    }
+}
+
+/* Responsividade para celulares */
+@media only screen and (max-width: 600px) {
+    .search-response {
+        padding: 2rem 1rem;
+    }
 }
