@@ -1,10 +1,10 @@
 import React from 'react'
 import CurrentWeather from '../../currentWeather/CurrentWeather'
+import './WeatherPage.css'
 
 function WeatherPage() {
     return (
-        <div>
-            WeatherPage
+        <div className='page-container'>
             <CurrentWeather />
         </div>
 

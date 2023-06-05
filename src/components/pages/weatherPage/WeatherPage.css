@@ -1,0 +1,10 @@
+.page-container {
+     /* background-image: url(https://media0.giphy.com/media/2SYqgPxMm2kbVe3y02/giphy.gif?cid=ecf05e47u4dc82zean0c8nosdzg3al536efq8bb3c7cuj99p&ep=v1_gifs_related&rid=giphy.gif&ct=g);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain; */
+
+    background-color: #dfdf1ae5;
+    width: 40%;
+    height: 90vh;
+}
