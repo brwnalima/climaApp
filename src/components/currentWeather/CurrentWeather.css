@@ -1,0 +1,73 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* ---- animation ----- */
+
+.search-description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+}
+
+.location {
+    display: flex;
+    gap: 0.1875rem;
+    justify-content: center;
+    align-items: center !important;
+}
+
+.location button {
+    background-color: transparent;
+    border: none;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-description h3 {
+    font-weight: bold;
+}
+
+#date {
+    text-transform: uppercase;
+    margin: .5rem 0;
+    padding: .5rem .8rem;
+    background-color: #242424;
+    color: #dfdf1ae5;
+    border-radius: 6.25rem;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+#desc {
+    font-size: 1rem;
+    padding: .5rem 0 0 0;
+}
+
+#desc::first-letter {
+    text-transform: uppercase;
+}
+
+.search-description h1 {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+.informations {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin: 1rem 0;
+}

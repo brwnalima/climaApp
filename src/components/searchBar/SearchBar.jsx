@@ -6,9 +6,6 @@ import { GiFluffyCloud } from 'react-icons/gi';
 import WeatherInfo from '../WeatherInfo/WeatherInfo';
 import CurrentWeather from '../currentWeather/CurrentWeather';
 
-
-
-
 function SearchBar() {
 
   const [editIsClicked, setEditIsClicked] = useState(false);
