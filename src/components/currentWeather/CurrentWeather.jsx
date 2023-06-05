@@ -1,6 +1,7 @@
 import { LuWind } from 'react-icons/lu';
 import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
 import { BiEdit } from 'react-icons/bi';
+import './CurrentWeather.css'
 
 function CurrentWeather({ weatherData, translatedDescription, handleEdit }) {
 
