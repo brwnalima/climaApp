@@ -2,18 +2,14 @@ import axios from 'axios';
 import { React, useEffect, useState } from 'react';
 import './SearchBar.css'
 
-import { LuWind } from 'react-icons/lu';
-import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
 import { GiFluffyCloud } from 'react-icons/gi';
-import { BiEdit } from 'react-icons/bi';
+import WeatherInfo from '../WeatherInfo/WeatherInfo';
+import CurrentWeather from '../currentWeather/CurrentWeather';
 
 
 
 
 function SearchBar() {
-  const options = { weekday: 'long', day: 'numeric', month: 'long' };
-  const currentDate = new Date().toLocaleDateString('pt-BR', options);
-
 
   const [editIsClicked, setEditIsClicked] = useState(false);
 
@@ -21,7 +17,6 @@ function SearchBar() {
     setEditIsClicked(!editIsClicked)
     setCity('')
   }
-
 
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
@@ -89,7 +84,7 @@ function SearchBar() {
   }
 
   return (
-    // search
+
     <div className="search-container">
       <form onSubmit={handleFormSubmit} className={editIsClicked ? 'search-form show' : 'search-form hide'}>
         <input
@@ -100,32 +95,20 @@ function SearchBar() {
         />
         <button type="submit">Buscar</button>
       </form>
-      {/* search */}
 
       <div className="search-response">
         {isLoading ? (
           <p className='loading'><GiFluffyCloud size={30} /></p>
         ) : weatherData ? (
-          <div className='search-description'>
-            <div className="location">
-              <h3> {weatherData.name}, {weatherData.sys.country}</h3>
-
-              <button onClick={handleEdit}><BiEdit /></button>
-            </div>
-            <p id='date'>{currentDate}</p>
-            <p id='desc'>{translatedDescription}</p>
-            <h1>{weatherData.main.temp.toFixed(0)}°C</h1>
-
-            <p id='status'>Sensação térmica de: {weatherData.main.feels_like}. </p>
-
-            <div className="informations">
-              <p><BsFillDropletFill /> {weatherData.main.humidity}%</p>
-              <p><LuWind /> {weatherData.wind.speed}Km/H</p>
-              <p><BsClouds /> {weatherData.clouds.all}un.</p>
-            </div>
-          </div>
+          <CurrentWeather
+            weatherData={weatherData}
+            translatedDescription={translatedDescription}
+            handleEdit={handleEdit}
+          />
         ) : null}
+
       </div>
+
     </div>
   );
 }
