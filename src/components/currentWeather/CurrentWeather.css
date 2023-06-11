@@ -14,13 +14,14 @@
 }
 
 .current-cotainer {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(255, 255, 255, 0.284);
     backdrop-filter: blur(0.4063rem);
-    gap: 2rem;
-    padding: 1rem 3rem;
+    gap: 3rem;
+    padding: 1rem 5rem;
     border-radius: 3.125rem;
     box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
 }
@@ -45,26 +46,27 @@
 
 .location h3 {
     font-weight: bold;
-    font-size: 0.9375rem;
+    font-size: 14px;
     color: #ddd;
 }
 
 .location h3 span {
-    font-size: 18px;
+    font-size: 14px;
     color: #ddd;
 }
 
 .location h3 span:last-child {
     color: #aeaeaeb4;
     font-weight: bold;
+    font-size: 14px;
 }
 
 /* Responsividade para tablets */
-@media only screen and (max-width: 37.5rem) {
+/* @media screen and (max-width: 600px) {
     .current-container {
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
+        padding: 0;
         border-radius: 1.25rem;
     }
 
@@ -89,12 +91,12 @@
     .location h3 span {
         font-size: 0.875rem;
     }
-}
+} */
 
 /* Responsividade para celulares */
-@media only screen and (max-width: 30rem) {
+/* @media screen and (max-width: 480px) {
     .current-container {
-        padding: 1rem;
+        padding: 0;
         border-radius: 1.25rem;
     }
 
@@ -114,4 +116,4 @@
     .location h3 span {
         font-size: 0.75rem;
     }
-}
+} */

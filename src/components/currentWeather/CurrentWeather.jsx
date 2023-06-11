@@ -1,6 +1,3 @@
-// import { LuWind } from 'react-icons/lu';
-// import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
-// import { BiEdit } from 'react-icons/bi';
 import './CurrentWeather.css'
 import { TiLocation } from 'react-icons/ti';
 
