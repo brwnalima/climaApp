@@ -7,6 +7,7 @@ function WeatherPage() {
     return (
         <div className='page-container'>
             <SearchBar/>
+            
         </div>
 
     )
