@@ -10,11 +10,6 @@ function SearchBar() {
 
   const [editIsClicked, setEditIsClicked] = useState(false);
 
-  const handleEdit = () => {
-    setEditIsClicked(!editIsClicked)
-    setCity('')
-  }
-
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +23,7 @@ function SearchBar() {
     event.preventDefault();
     setEditIsClicked(!editIsClicked)
     fetchWeatherData();
+    setCity('')
   };
 
   async function fetchWeatherData() {
@@ -42,7 +38,6 @@ function SearchBar() {
 
       if (response.status === 200) {
         setWeatherData(response.data);
-        translateDescription(response.data.weather[0].description);
         console.log(response.data);
       } else {
         console.log('Não foi possível obter o clima.');

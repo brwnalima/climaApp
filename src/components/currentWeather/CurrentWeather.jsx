@@ -11,8 +11,9 @@ function CurrentWeather({ weatherData, getWeatherIcon }) {
     <div className='current-cotainer'>
 
       {getWeatherIcon(weatherIcon)}
-      
+
       <div className="location">
+        <h3>Hoje</h3>
         <h2>{weatherData.main.temp.toFixed(0)}°C</h2>
 
         <h3><span><TiLocation /></span> {weatherData.name}, <span>{weatherData.sys.country}</span></h3>

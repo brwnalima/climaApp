@@ -58,11 +58,29 @@ button {
     .search-response {
         padding: 2rem 4rem;
     }
+
+    .search-form input {
+        padding: .1rem 5rem .1rem .5rem;
+    }
+    
 }
 
 /* Responsividade para celulares */
 @media only screen and (max-width: 600px) {
     .search-response {
         padding: 2rem 1rem;
+    }
+
+    .show {
+        gap: .875rem;
+    }
+
+    .search-form input {
+        padding: .3rem 2rem .3rem .5rem;
+    }
+
+    .search-form button {
+        padding: .3rem .7rem;
+        font-size: 1rem;
     }
 }
