@@ -10,64 +10,108 @@
 
 .loading {
     animation: spin 1s linear infinite;
+    color: rgba(255, 255, 255, 0.284);
 }
 
-/* ---- animation ----- */
-
-.search-description {
-    text-align: center;
+.current-cotainer {
     display: flex;
-    flex-direction: column;
-    gap: .625rem;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.284);
+    backdrop-filter: blur(0.4063rem);
+    gap: 2rem;
+    padding: 1rem 3rem;
+    border-radius: 3.125rem;
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+}
+
+.current-cotainer img {
+    width: 9.375rem;
+    max-width: 9.375rem;
+    min-width: 3.75rem;
 }
 
 .location {
     display: flex;
-    gap: 0.1875rem;
-    justify-content: center;
-    align-items: center !important;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.location button {
-    background-color: transparent;
-    border: none;
-    font-size: .9rem;
-    display: flex;
-    justify-content: center;
+.location h2 {
+    font-weight: bold;
+    font-size: 2.8125rem;
+    color: #ddd;
 }
 
-.search-description h3 {
+.location h3 {
+    font-weight: bold;
+    font-size: 0.9375rem;
+    color: #ddd;
+}
+
+.location h3 span {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.location h3 span:last-child {
+    color: #aeaeaeb4;
     font-weight: bold;
 }
 
-#date {
-    text-transform: uppercase;
-    margin: .5rem 0;
-    padding: .5rem .8rem;
-    background-color: #242424;
-    color: #dfdf1ae5;
-    border-radius: 6.25rem;
-    font-size: .8rem;
-    font-weight: bold;
+/* Responsividade para tablets */
+@media only screen and (max-width: 37.5rem) {
+    .current-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .current-container img {
+        width: 100px;
+        margin-bottom: 1rem;
+    }
+
+    .location {
+        align-items: center;
+        text-align: center;
+    }
+
+    .location h2 {
+        font-size: 1.5rem;
+    }
+
+    .location h3 {
+        font-size: 0.875rem;
+    }
+
+    .location h3 span {
+        font-size: 0.875rem;
+    }
 }
 
-#desc {
-    font-size: 1rem;
-    padding: .5rem 0 0 0;
-}
+/* Responsividade para celulares */
+@media only screen and (max-width: 30rem) {
+    .current-container {
+        padding: 1rem;
+        border-radius: 1.25rem;
+    }
 
-#desc::first-letter {
-    text-transform: uppercase;
-}
+    .current-container img {
+        width: 80px;
+        margin-bottom: 0.5rem;
+    }
 
-.search-description h1 {
-    font-size: 4rem;
-    font-weight: bolder;
-}
+    .location h2 {
+        font-size: 1.25rem;
+    }
 
-.informations {
-    display: flex;
-    justify-content: space-between;
-    gap: 2.5rem;
-    margin: 1rem 0;
+    .location h3 {
+        font-size: 0.75rem;
+    }
+
+    .location h3 span {
+        font-size: 0.75rem;
+    }
 }

@@ -1,27 +1,24 @@
-import { LuWind } from 'react-icons/lu';
-import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
-import { BiEdit } from 'react-icons/bi';
+// import { LuWind } from 'react-icons/lu';
+// import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
+// import { BiEdit } from 'react-icons/bi';
 import './CurrentWeather.css'
+import { TiLocation } from 'react-icons/ti';
 
-function CurrentWeather({ weatherData, translatedDescription, handleEdit }) {
 
-  const options = { weekday: 'long', day: 'numeric', month: 'long' };
-  const currentDate = new Date().toLocaleDateString('pt-BR', options);
+function CurrentWeather({ weatherData, getWeatherIcon }) {
+
+  const weatherIcon = weatherData.weather[0].description.toLowerCase();
 
   return (
-    <div className="search-description">
+
+    <div className='current-cotainer'>
+
+      {getWeatherIcon(weatherIcon)}
+      
       <div className="location">
-        <h3> {weatherData.name}, {weatherData.sys.country}</h3>
-        <button onClick={handleEdit}><BiEdit /></button>
-      </div>
-      <p id='date'>{currentDate}</p>
-      <p id='desc'>{translatedDescription}</p>
-      <h1>{weatherData.main.temp.toFixed(0)}°C</h1>
-      <p id='status'>Sensação térmica de: {weatherData.main.feels_like.toFixed(0)}°C. </p>
-      <div className="informations">
-        <p><BsFillDropletFill /> {weatherData.main.humidity}%</p>
-        <p><LuWind /> {weatherData.wind.speed}Km/H</p>
-        <p><BsClouds /> {weatherData.clouds.all} un.</p>
+        <h2>{weatherData.main.temp.toFixed(0)}°C</h2>
+
+        <h3><span><TiLocation /></span> {weatherData.name}, <span>{weatherData.sys.country}</span></h3>
       </div>
     </div>
   );
