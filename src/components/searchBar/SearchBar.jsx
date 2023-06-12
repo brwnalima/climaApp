@@ -13,7 +13,6 @@ function SearchBar() {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  // const [translatedDescription, setTranslatedDescription] = useState('');
 
   const handleInputChange = (event) => {
     setCity(event.target.value);
