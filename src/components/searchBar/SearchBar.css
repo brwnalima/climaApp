@@ -16,7 +16,7 @@
     font-size: .8rem;
     background-color: transparent;
     border: .025rem solid #a8a8a8e7;
-    border-radius: 6.25rem;
+    border-radius: .5rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     color: #ddd;
     font-weight: 400;
@@ -30,7 +30,7 @@
     border: .025rem solid #b7b6b6;
     background: rgba(255, 255, 255, 0.284);
     backdrop-filter: blur(6.5px);
-    border-radius: 6.25rem;
+    border-radius: .5rem;
     cursor: pointer;
     font-weight: bolder;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -52,6 +52,31 @@
 button {
     cursor: pointer;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentW {
+    width: 90%;
+}
+
+.dailyF {
+    width: 100%;
+}
+
+.dailyF h3 {
+    color: rgba(255, 255, 255, 0.636);
+    font-weight: bold;
+    font-size: 20px;
+    padding: .3125rem 0 1.25rem .625rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.401);
+}
+
 
 /* Responsividade para tablets */
 @media only screen and (min-width: 600px) {

@@ -73,7 +73,7 @@ function SearchBar() {
       });
 
       setForecast(Object.values(dailyForecast));
-      setCity(data.city.name);
+   
     } catch (error) {
       console.error('Error fetching weather forecast:', error);
     }
@@ -160,20 +160,24 @@ function SearchBar() {
         {isLoading ? (
           <p className='loading'><GiFluffyCloud size={30} /></p>
         ) : weatherData ? (
-          <section>
-            <div>
+          <div className='container'>
+            <div className='currentW'>
               <CurrentWeather
                 weatherData={weatherData}
                 getWeatherIcon={getWeatherIcon}
               />
             </div>
-            <div>
+
+
+            <div className='dailyF'>
+              <h3>Próximos dias</h3>
               <DailyForecast
-              forecast={forecast}
-              translateDescription={translateDescription}
+                forecast={forecast}
+                translateDescription={translateDescription}
+                getWeatherIcon={getWeatherIcon}
               />
             </div>
-          </section>
+          </div>
         ) : null}
 
       </div>
