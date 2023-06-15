@@ -5,6 +5,7 @@ import './SearchBar.css'
 import { GiFluffyCloud } from 'react-icons/gi';
 
 import CurrentWeather from '../currentWeather/CurrentWeather';
+import DailyForecast from '../dailyForecast/DailyForecast';
 
 function SearchBar() {
 
@@ -139,6 +140,7 @@ function SearchBar() {
 
   useEffect(() => {
     fetchWeatherData();
+    fetchWeatherForecast();
   }, []);
 
   return (
@@ -158,16 +160,20 @@ function SearchBar() {
         {isLoading ? (
           <p className='loading'><GiFluffyCloud size={30} /></p>
         ) : weatherData ? (
-          <div>
-            <CurrentWeather
-              weatherData={weatherData}
-              getWeatherIcon={getWeatherIcon}
-            />
-            <DailyForecast
-            forecast={forecast}
-            translateDescription={translateDescription}
-            />
-          </div>
+          <section>
+            <div>
+              <CurrentWeather
+                weatherData={weatherData}
+                getWeatherIcon={getWeatherIcon}
+              />
+            </div>
+            <div>
+              <DailyForecast
+              forecast={forecast}
+              translateDescription={translateDescription}
+              />
+            </div>
+          </section>
         ) : null}
 
       </div>

@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import './DailyForecast.css'
 
 function DailyForecast({ forecast, translateDescription }) {
 
