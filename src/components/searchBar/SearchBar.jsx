@@ -73,7 +73,7 @@ function SearchBar() {
       });
 
       setForecast(Object.values(dailyForecast));
-   
+
     } catch (error) {
       console.error('Error fetching weather forecast:', error);
     }
@@ -145,7 +145,12 @@ function SearchBar() {
 
   return (
 
+
     <div className="search-container">
+      <div className="currentCity">
+        
+      </div>
+
       <form onSubmit={handleFormSubmit} className='search-form show'>
         <input
           type="text"
