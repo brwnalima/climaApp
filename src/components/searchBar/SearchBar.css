@@ -49,10 +49,6 @@
 /* --------------------- */
 
 
-.search-response {
-    padding: 2rem 6rem;
-}
-
 button {
     cursor: pointer;
 }
@@ -84,9 +80,6 @@ button {
 
 /* Responsividade para tablets */
 @media only screen and (min-width: 600px) {
-    .search-response {
-        padding: 2rem 4rem;
-    }
 
     .search-form input {
         padding: .1rem 5rem .1rem .5rem;

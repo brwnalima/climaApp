@@ -65,7 +65,6 @@ function SearchBar() {
       const response = await fetch(url);
       const data = await response.json();
 
-      // Group forecast by day
       const dailyForecast = {};
       data.list.forEach((item) => {
         const date = item.dt_txt.split(' ')[0];
