@@ -4,20 +4,20 @@ import { TiLocation } from 'react-icons/ti';
 import { FaEllipsisV } from 'react-icons/fa';
 
 
-function CurrentWeather({ weatherData, getWeatherIcon }) {
+function CurrentWeather({ weatherData, getWeatherIcon, handleEdit, editIsClicked, setEditIsClicked}) {
 
   const weatherIcon = weatherData.weather[0].description.toLowerCase();
 
   return (
 
     <div className="wrapper">
-      <div className="currentCity">
+      <div className={!editIsClicked ? "currentCity-show" : "currentCity-hide"}>
           <div className="icon">
             <span><VscActivateBreakpoints /></span>
           </div>
           <h3><span><TiLocation /></span> {weatherData.name}, <span>{weatherData.sys.country}</span></h3>
           <div className='icon'>
-            <button>
+            <button onClick={handleEdit}>
               <FaEllipsisV />
             </button>
           </div>
@@ -30,6 +30,8 @@ function CurrentWeather({ weatherData, getWeatherIcon }) {
           <h2>{weatherData.main.temp.toFixed(0)}°C</h2>
         </div>
       </div>
+
+      
     </div>
   );
 }

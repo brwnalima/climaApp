@@ -28,6 +28,12 @@ function SearchBar() {
     setCity('')
   };
 
+  const handleEdit = () => {
+    setEditIsClicked(!editIsClicked)
+    setCity('')
+    console.log(editIsClicked);
+  }
+
   async function fetchWeatherData() {
     const apiKey = '944c94361980e1ab31ac912b9aaa3e73';
 
@@ -147,11 +153,8 @@ function SearchBar() {
 
 
     <div className="search-container">
-      <div className="currentCity">
-        
-      </div>
 
-      <form onSubmit={handleFormSubmit} className='search-form show'>
+      <form onSubmit={handleFormSubmit} className={editIsClicked ? "search-form show" : "search-form hide"}>
         <input
           type="text"
           value={city}
@@ -170,6 +173,9 @@ function SearchBar() {
               <CurrentWeather
                 weatherData={weatherData}
                 getWeatherIcon={getWeatherIcon}
+                handleEdit={handleEdit}
+                editIsClicked={editIsClicked}
+                setEditIsClicked={setEditIsClicked}
               />
             </div>
 
