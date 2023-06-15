@@ -1,6 +1,6 @@
 import React from 'react'
 import './WeatherPage.css'
-import SearchBar from '../../searchBar/searchBar'
+import SearchBar from '../../searchBar/SearchBar.jsx'
 
 function WeatherPage() {
     return (
