@@ -158,10 +158,16 @@ function SearchBar() {
         {isLoading ? (
           <p className='loading'><GiFluffyCloud size={30} /></p>
         ) : weatherData ? (
-          <CurrentWeather
-            weatherData={weatherData}
-            getWeatherIcon={getWeatherIcon}
-          />
+          <div>
+            <CurrentWeather
+              weatherData={weatherData}
+              getWeatherIcon={getWeatherIcon}
+            />
+            <DailyForecast
+            forecast={forecast}
+            translateDescription={translateDescription}
+            />
+          </div>
         ) : null}
 
       </div>
