@@ -16,27 +16,45 @@
 .current-cotainer {
     box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.284);
-    backdrop-filter: blur(0.4063rem);
-    gap: 1.4rem;
-    padding: 1rem 5rem;
-    border-radius: 3.125rem;
-    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
 }
 
 .current-cotainer img {
-    width: 200px;
-    max-width: 9.375rem;
-    min-width: 60px;
+    margin: 10px 0 0 0;
+    width: 250px;
 }
+
+
+.currentCity-hide {
+    display: none;
+}
+
+.currentCity-show {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.currentCity-show .icon button, .currentCity-show .icon span  {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
 
 .location {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    width: 105%;
+    align-items: center;
 }
 
 .location h2 {
@@ -45,9 +63,9 @@
     color: #ddd;
 }
 
-.location h3 {
+h3 {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     color: #ddd;
 }
 
@@ -56,15 +74,24 @@
     padding-bottom: 8px;
 }
 
-.location h3 span {
+h3 span {
     font-size: 14px;
     color: #ddd;
 }
 
-.location h3 span:last-child {
+h3 span:last-child {
     color: #aeaeaeb4;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
+}
+
+.informations {
+    padding: 1.25rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin: 1rem 0;
+    color: white;
 }
 
 /* Responsividade para tablets */
@@ -72,7 +99,6 @@
 
     .current-cotainer {
         padding: 1rem 2rem;
-        box-shadow: 0 .25rem 1.875rem rgba(0, 0, 0, 0.1);
     }
 
     .location h2 {
