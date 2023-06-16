@@ -84,28 +84,6 @@ function SearchBar() {
     }
   };
 
-  const translateDescription = (description) => {
-    const translationMap = {
-      Clear: 'Céu Limpo',
-      Clouds: 'Nublado',
-      Rain: 'Chuva',
-      Drizzle: 'Garoa',
-      Thunderstorm: 'Tempestade',
-      Snow: 'Neve',
-      Mist: 'Neblina',
-      Smoke: 'Fumaça',
-      Haze: 'Nevoeiro',
-      Dust: 'Poeira',
-      Fog: 'Névoa',
-      Sand: 'Areia',
-      Ash: 'Cinzas',
-      Squall: 'Squall',
-      Tornado: 'Tornado',
-    };
-
-    return translationMap[description] || description;
-  };
-
   function getWeatherIcon(description) {
     switch (description) {
       case 'clear sky':
@@ -183,7 +161,6 @@ function SearchBar() {
               <h3>Próximos dias</h3>
               <DailyForecast
                 forecast={forecast}
-                translateDescription={translateDescription}
                 getWeatherIcon={getWeatherIcon}
               />
             </div>

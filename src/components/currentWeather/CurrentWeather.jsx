@@ -5,7 +5,7 @@ import { FaEllipsisV } from 'react-icons/fa';
 import { LuWind } from 'react-icons/lu';
 import { BsFillDropletFill, BsClouds } from 'react-icons/bs';
 
-function CurrentWeather({ weatherData, getWeatherIcon, handleEdit, editIsClicked, setEditIsClicked }) {
+function CurrentWeather({ weatherData, getWeatherIcon, handleEdit, editIsClicked }) {
 
   const weatherIcon = weatherData.weather[0].description.toLowerCase();
 

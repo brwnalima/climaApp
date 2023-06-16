@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import './DailyForecast.css'
 
-function DailyForecast({ forecast, translateDescription, getWeatherIcon }) {
+function DailyForecast({ forecast, getWeatherIcon }) {
   return (
     <div className='forecast-container'>
       {forecast ? (
