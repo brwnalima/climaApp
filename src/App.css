@@ -1,19 +1,33 @@
 .app {
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
+  animation: gradientAnimation 8s ease infinite alternate;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
-    .app {
-      height: 120vh;
-    }
+  .app {
+    height: 120vh;
   }
-  
-  @media only screen and (max-width: 480px) {
-    .app {
-      height: 120vh;
-    }
+}
+
+@media only screen and (max-width: 480px) {
+  .app {
+    height: 120vh;
   }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #002633;
+  }
+
+  50% {
+    background-color: #01203d;
+  }
+
+  100% {
+    background-color: #000d1a;
+  }
+}

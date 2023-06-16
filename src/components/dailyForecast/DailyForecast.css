@@ -37,3 +37,23 @@
     font-size: clamp(11px, 1vw, 14px);
     color: rgba(255, 255, 255, 0.49);
   }
+
+  @media only screen and (max-width: 768px) {
+    .forecast-container {
+      gap: .5rem;
+    }
+
+    .forecast-day {
+      padding: .8rem .3rem;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .forecast-container {
+      gap: .5rem;
+    }
+
+    .forecast-day {
+      padding: .8rem .3rem;
+    }
+  }
